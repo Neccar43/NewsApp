@@ -11,11 +11,12 @@ import com.example.newsapp.model.Article
 interface ArticlesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFavoriteNews(article: Article): Long
+    suspend fun insertFavoriteNews(article: Article):Long
 
     @Query("SELECT * FROM articles")
-    suspend fun getAllFavoriteNews(): List<Article>
+    suspend fun getAllFavoriteNews():List<Article>
 
     @Delete
     suspend fun deleteNews(article: Article)
+
 }
