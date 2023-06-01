@@ -13,7 +13,7 @@ import com.example.newsapp.model.User
 abstract class ArticlesDatabase : RoomDatabase() {
     abstract fun articlesDao(): ArticlesDao
 
-
+    //singleton yapısı
     companion object {
         @Volatile
         private var instance: ArticlesDatabase? = null
