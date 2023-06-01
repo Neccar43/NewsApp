@@ -28,8 +28,9 @@
                 android:gravity="center_vertical"
                 android:text="Hesap Bilgilerim"
                 android:textSize="20sp"
-                android:visibility="visible"
-                app:drawableStartCompat="@drawable/baseline_person_24" />
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/baseline_person_24"
+                tools:visibility="gone" />
 
             <TextView
                 android:id="@+id/changeMailText"

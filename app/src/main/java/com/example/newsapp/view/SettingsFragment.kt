@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import com.example.newsapp.R
 import com.example.newsapp.databinding.FragmentSettingsBinding
@@ -36,7 +37,17 @@ class SettingsFragment : Fragment() {
             }
         }
 
+        binding.changeMailText.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+        }
 
+        binding.changePasswordText.setOnClickListener {
+
+        }
+
+        binding.deleteText.setOnClickListener {
+
+        }
 
         return binding.root
     }

@@ -21,12 +21,20 @@
         android:id="@+id/favoriteFragment"
         android:name="com.example.newsapp.view.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/feedFragment"
         android:name="com.example.newsapp.view.FeedFragment"
         android:label="fragment_feed"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.newsapp.view.SettingsFragment"
@@ -49,5 +57,14 @@
         <action
             android:id="@+id/action_signUpFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.example.newsapp.view.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" >
+        <argument
+            android:name="url"
+            app:argType="string" />
     </fragment>
 </navigation>

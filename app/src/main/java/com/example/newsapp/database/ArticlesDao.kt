@@ -41,6 +41,16 @@ interface ArticlesDao {
     @Query("SELECT EXISTS(SELECT 1 FROM users WHERE userId=:userId )")
     suspend fun isUserExistInRoom(userId: String):Boolean
 
+    @Query("DELETE FROM users WHERE userId=:userId")
+    suspend fun deleteUserFromRoom(userId: String)
 
+    @Query("DELETE FROM articles WHERE userId=:userId")
+    suspend fun deleteAllFavoriteNews(userId: String)
+
+    @Query("UPDATE users SET email=:newEmail WHERE userId=:userId")
+    suspend fun updateEmail(newEmail:String,userId: String)
+
+ @Query("UPDATE users SET password=:newPassword WHERE userId=:userId")
+ suspend fun updatePassword(newPassword:String,userId: String)
 
 }

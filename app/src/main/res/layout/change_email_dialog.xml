@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/oldEmailInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="E-Mail"
+            app:errorEnabled="false"
+            app:errorIconDrawable="@drawable/baseline_error_24"
+
+            app:startIconDrawable="@drawable/baseline_email_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/oldEmailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Şifre"
+            app:endIconMode="password_toggle"
+            app:errorEnabled="false"
+            app:errorIconDrawable="@drawable/baseline_error_24"
+            app:startIconDrawable="@drawable/baseline_lock_24"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordText"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/changeLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Oturum aç"
+            />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/newEmailInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Yeni E-Mail"
+            android:visibility="gone"
+            app:errorEnabled="false"
+
+            app:errorIconDrawable="@drawable/baseline_error_24"
+            app:startIconDrawable="@drawable/baseline_email_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newEmailText"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/changeSubmitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Onayla"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+</FrameLayout>

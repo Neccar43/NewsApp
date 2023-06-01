@@ -1,34 +1,27 @@
 package com.example.newsapp.adapter
 
-import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newsapp.database.ArticlesDatabase
 import com.example.newsapp.databinding.NewsRowBinding
 import com.example.newsapp.model.Article
 import com.example.newsapp.util.deleteNewsFromRoom
 import com.example.newsapp.util.formatTimeAgo
 import com.example.newsapp.util.isNewsExistRoom
 import com.example.newsapp.util.storeFavoriteNews
+import com.example.newsapp.view.FavoriteFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class FavoriteAdapter(private val articleList: List<Article>) :
     RecyclerView.Adapter<FavoriteAdapter.NewsHolder>() {
-    class NewsHolder(val binding: NewsRowBinding) : RecyclerView.ViewHolder(binding.root) {
-
-    }
+    class NewsHolder(val binding: NewsRowBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsHolder {
         val binding = NewsRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -46,6 +39,11 @@ class FavoriteAdapter(private val articleList: List<Article>) :
 
         }
         Picasso.get().load(article.urlToImage).into(holder.binding.ivArticleImage)
+
+        holder.binding.newsLayout.setOnClickListener {
+            val action= FavoriteFragmentDirections.actionFavoriteFragmentToWebViewFragment(article.url)
+            it.findNavController().navigate(action)
+        }
 
         holder.binding.addFavoriteButton.setOnClickListener { view ->
             CoroutineScope(Dispatchers.Main).launch {
