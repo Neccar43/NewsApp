@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F1F1"
     android:orientation="vertical"
     tools:context=".view.SettingsFragment">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
@@ -20,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/userText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -32,7 +31,7 @@
                 app:drawableStartCompat="@drawable/baseline_person_24"
                 tools:visibility="gone" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/changeMailText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -42,7 +41,7 @@
                 android:textSize="20sp"
                 app:drawableStartCompat="@drawable/baseline_email_24" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/changePasswordText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -52,7 +51,7 @@
                 android:textSize="20sp"
                 app:drawableStartCompat="@drawable/baseline_lock_24" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/deleteText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -62,7 +61,7 @@
                 android:textSize="20sp"
                 app:drawableStartCompat="@drawable/baseline_delete_24" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/logOutText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -73,6 +72,6 @@
                 app:drawableStartCompat="@drawable/baseline_logout_24" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </FrameLayout>
